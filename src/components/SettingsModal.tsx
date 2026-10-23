@@ -162,7 +162,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                           <span className="font-semibold text-xs text-theme-text">{theme.name}</span>
                           {isSelected && <Check className="w-4 h-4 text-theme-accent" />}
                         </div>
-                        <p className="text-[11px] text-theme-textMuted mt-0.5 leading-snug">{theme.desc}</p>
+                        <p className="text-xs text-theme-textMuted mt-0.5 leading-snug">{theme.desc}</p>
                       </div>
                     </div>
                   );
@@ -193,7 +193,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     </button>
                   ))}
                 </div>
-                <p className="text-[11px] text-theme-textMuted mt-1.5">
+                <p className="text-xs text-theme-textMuted mt-1.5">
                   Short: 3–4 words • Balanced: 4–6 words • Long: 6–9 words • Sentence: complete sentences
                 </p>
               </div>
@@ -226,7 +226,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   onChange={(e) => onUpdateSettings({ writingPaceWpm: parseInt(e.target.value, 10) })}
                   className="w-full accent-theme-accent"
                 />
-                <p className="text-[11px] text-theme-textMuted mt-1">
+                <p className="text-xs text-theme-textMuted mt-1">
                   Average student physical handwriting is 15–20 words per minute.
                 </p>
               </div>
@@ -250,7 +250,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   onChange={(e) => onUpdateSettings({ gazeDwellMs: parseInt(e.target.value, 10) })}
                   className="w-full accent-theme-accent"
                 />
-                <p className="text-[11px] text-theme-textMuted mt-1">
+                <p className="text-xs text-theme-textMuted mt-1">
                   Higher dwell duration prevents accidental phrase triggers when glancing quickly.
                 </p>
               </div>
@@ -258,7 +258,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="pt-3 border-t border-theme-border flex items-center justify-between">
                 <div>
                   <span className="text-xs font-semibold text-theme-text block">Subtle Tactile Audio Feedback</span>
-                  <span className="text-[11px] text-theme-textMuted">Plays gentle mechanical tap when phrases advance</span>
+                  <span className="text-xs text-theme-textMuted">Plays gentle mechanical tap when phrases advance</span>
                 </div>
                 <input
                   type="checkbox"
@@ -274,7 +274,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="pt-3 border-t border-theme-border flex items-center justify-between">
                 <div>
                   <span className="text-xs font-semibold text-theme-text block">Show Context Window</span>
-                  <span className="text-[11px] text-theme-textMuted">Displays previous phrase and upcoming preview</span>
+                  <span className="text-xs text-theme-textMuted">Displays previous phrase and upcoming preview</span>
                 </div>
                 <input
                   type="checkbox"
@@ -344,7 +344,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="flex items-center justify-between p-3.5 rounded-xl bg-theme-surfaceHover/50 border border-theme-border">
                 <div>
                   <span className="font-semibold text-xs text-theme-text block">Enable Optional AI Assistant</span>
-                  <span className="text-[11px] text-theme-textMuted">
+                  <span className="text-xs text-theme-textMuted">
                     Uses Bring-Your-Own-Key (BYOK). Fully optional — core app runs 100% without AI.
                   </span>
                 </div>
@@ -377,7 +377,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="sk-or-v1-... or your OpenAI/Groq key"
                       className="w-full px-3 py-2 rounded-xl border border-theme-border bg-theme-bg text-theme-text text-xs focus:ring-1 focus:ring-theme-accent font-mono"
                     />
-                    <p className="text-[10px] text-theme-textSubtle mt-0.5">
+                    <p className="text-xs text-theme-textSubtle mt-0.5">
                       Stored exclusively in your local browser LocalStorage. Never sent to any ScribeFlow server.
                     </p>
                   </div>
@@ -397,7 +397,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="https://openrouter.ai/api/v1"
                       className="w-full px-3 py-2 rounded-xl border border-theme-border bg-theme-bg text-theme-text text-xs focus:ring-1 focus:ring-theme-accent font-mono"
                     />
-                    <p className="text-[10px] text-theme-textSubtle mt-0.5">
+                    <p className="text-xs text-theme-textSubtle mt-0.5">
                       Can also be local Ollama (e.g. http://localhost:11434/v1) or Groq/OpenAI.
                     </p>
                   </div>

@@ -136,13 +136,13 @@ export const FlowStage: React.FC<FlowStageProps> = ({
         >
           {/* Chunk Type Badge */}
           {currentChunk.type !== 'text' && (
-            <span className="absolute top-3 left-4 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-theme-accentBg text-theme-accent border border-theme-border">
+            <span className="absolute top-3 left-4 px-2 py-0.5 rounded-full text-xs font-mono uppercase tracking-wider bg-theme-accentBg text-theme-accent border border-theme-border">
               {currentChunk.type}
             </span>
           )}
 
           {/* Word Count Indicator */}
-          <span className="absolute top-3 right-4 text-[10px] font-mono text-theme-textSubtle">
+          <span className="absolute top-3 right-4 text-xs font-mono text-theme-textSubtle">
             {currentChunk.wordCount} words
           </span>
 

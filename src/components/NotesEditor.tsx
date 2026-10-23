@@ -235,7 +235,7 @@ export const NotesEditor: React.FC<NotesEditorProps> = ({
           <span>{wordCount} words</span>
           <span>{lineCount} lines</span>
         </div>
-        <div className="text-[11px] text-theme-textSubtle">
+        <div className="text-xs text-theme-textSubtle">
           Formatting: Markdown • KaTeX LaTeX • Tables
         </div>
       </div>

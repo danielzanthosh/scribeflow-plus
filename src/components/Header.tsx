@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
 
-        <span className="hidden md:inline-block px-2 py-0.5 rounded-full text-[10px] font-mono bg-theme-surfaceHover text-theme-textMuted border border-theme-border">
+        <span className="hidden md:inline-block px-2 py-0.5 rounded-full text-xs font-mono bg-theme-surfaceHover text-theme-textMuted border border-theme-border">
           Cognitive Scribe Flow
         </span>
       </div>

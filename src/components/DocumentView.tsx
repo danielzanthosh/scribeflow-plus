@@ -32,7 +32,7 @@ export const DocumentView: React.FC<DocumentViewProps> = ({
         <span className="flex items-center gap-2">
           <span>📜 Full Script Transcript</span>
         </span>
-        <span className="font-mono text-[11px] text-theme-textMuted">
+        <span className="font-mono text-xs text-theme-textMuted">
           {chunks.length} phrases
         </span>
       </div>
@@ -52,7 +52,7 @@ export const DocumentView: React.FC<DocumentViewProps> = ({
                   : 'border-transparent hover:border-theme-border hover:bg-theme-surfaceHover text-theme-text opacity-75 hover:opacity-100'
               }`}
             >
-              <div className="flex items-center justify-between text-[10px] text-theme-textSubtle mb-1">
+              <div className="flex items-center justify-between text-xs text-theme-textSubtle mb-1">
                 <span>#{idx + 1}</span>
                 {chunk.type !== 'text' && (
                   <span className="font-mono uppercase">{chunk.type}</span>

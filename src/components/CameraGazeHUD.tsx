@@ -112,14 +112,14 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
             {!isCameraActive && (
               <div className="flex flex-col items-center justify-center p-4 text-center text-stone-400 gap-2">
                 <CameraOff className="w-6 h-6 text-stone-500" />
-                <span className="text-[11px] leading-tight">Camera is idle. Click below to start hands-free tracking.</span>
+                <span className="text-xs leading-tight">Camera is idle. Click below to start hands-free tracking.</span>
               </div>
             )}
 
             {/* In-Video Pitch HUD Overlay */}
             {isCameraActive && (
               <div className="absolute inset-0 pointer-events-none p-2 flex flex-col justify-between">
-                <div className="flex justify-between items-center text-[10px] font-mono text-white/90 drop-shadow">
+                <div className="flex justify-between items-center text-xs font-mono text-white/90 drop-shadow">
                   <span className={`px-1.5 py-0.5 rounded ${metrics.currentState === 'looking-screen' ? 'bg-emerald-600/90' : metrics.currentState === 'looking-down' ? 'bg-amber-600/90' : 'bg-red-600/90'}`}>
                     {metrics.currentState === 'looking-screen' ? 'READING (SCREEN)' : metrics.currentState === 'looking-down' ? 'WRITING (NOTEBOOK)' : 'NO FACE'}
                   </span>
@@ -136,7 +136,7 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
                   />
                 </div>
 
-                <div className="text-[9px] text-white/70 text-center font-mono">
+                <div className="text-xs text-white/70 text-center font-mono">
                   Conf: {Math.round(metrics.confidence * 100)}%
                 </div>
               </div>
@@ -166,12 +166,12 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
           {/* Calibration Panel */}
           {isCameraActive && (
             <div className="space-y-2 pt-1 border-t border-theme-border">
-              <div className="flex items-center justify-between text-[11px] text-theme-textMuted">
+              <div className="flex items-center justify-between text-xs text-theme-textMuted">
                 <span className="font-medium flex items-center gap-1">
                   <Crosshair className="w-3 h-3 text-theme-accent" />
                   Quick Angle Calibration
                 </span>
-                <span className="text-[10px] text-emerald-600 font-mono">
+                <span className="text-xs text-emerald-600 font-mono">
                   {metrics.isCalibrated ? 'Calibrated' : 'Needs Set'}
                 </span>
               </div>
@@ -179,14 +179,14 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
               <div className="grid grid-cols-2 gap-1.5">
                 <button
                   onClick={handleCalibrateLookUp}
-                  className="px-2 py-1.5 rounded-lg border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text text-[11px] font-medium transition-colors flex items-center justify-center gap-1"
+                  className="px-2 py-1.5 rounded-lg border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text text-xs font-medium transition-colors flex items-center justify-center gap-1"
                 >
                   {calibSuccess === 'up' ? <Check className="w-3 h-3 text-emerald-600" /> : null}
                   1. Look at Screen
                 </button>
                 <button
                   onClick={handleCalibrateLookDown}
-                  className="px-2 py-1.5 rounded-lg border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text text-[11px] font-medium transition-colors flex items-center justify-center gap-1"
+                  className="px-2 py-1.5 rounded-lg border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text text-xs font-medium transition-colors flex items-center justify-center gap-1"
                 >
                   {calibSuccess === 'down' ? <Check className="w-3 h-3 text-emerald-600" /> : null}
                   2. Look at Notebook
@@ -197,7 +197,7 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
 
           {/* Mode Selector */}
           <div className="space-y-1 pt-1 border-t border-theme-border">
-            <span className="text-[11px] font-medium text-theme-textMuted">Auto-Advance Trigger:</span>
+            <span className="text-xs font-medium text-theme-textMuted">Auto-Advance Trigger:</span>
             <select
               value={autoAdvanceMode}
               onChange={(e) => onSetAutoAdvanceMode(e.target.value as AutoAdvanceMode)}

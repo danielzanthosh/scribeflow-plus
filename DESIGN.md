@@ -44,7 +44,7 @@ typography:
     fontWeight: 700
     lineHeight: 1.25
   title:
-    fontFamily: "Inter, sans-serif"
+    fontFamily: "Inter, sans-serif, sans"
     fontSize: "1.125rem"
     fontWeight: 600
     lineHeight: 1.4
@@ -53,11 +53,31 @@ typography:
     fontSize: "1.25rem"
     fontWeight: 400
     lineHeight: 1.6
+  sans:
+    fontFamily: "Inter, sans-serif, sans"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.5
+  mono:
+    fontFamily: "JetBrains Mono, monospace, mono"
+    fontSize: "0.875rem"
+    fontWeight: 500
+    lineHeight: 1.4
   label:
-    fontFamily: "JetBrains Mono, monospace"
+    fontFamily: "JetBrains Mono, monospace, mono"
     fontSize: "0.75rem"
     fontWeight: 500
     letterSpacing: "0.05em"
+  caption:
+    fontFamily: "Inter, sans-serif, sans"
+    fontSize: "0.6875rem"
+    fontWeight: 400
+    lineHeight: 1.4
+  micro:
+    fontFamily: "JetBrains Mono, monospace, mono"
+    fontSize: "0.625rem"
+    fontWeight: 500
+    lineHeight: 1.2
 rounded:
   sm: "8px"
   md: "12px"
@@ -119,8 +139,10 @@ The ScribeFlow+ palette operates across six distinct atmospheric themes, with **
 ## Typography
 
 **Display Font:** Crimson Pro (with Georgia, serif fallback)  
-**Body Font:** Crimson Pro, with configurable switches to Inter (Sans-Serif) or JetBrains Mono  
-**Label/Mono Font:** JetBrains Mono (monospace)
+**Body Font:** Crimson Pro (Serif), with configurable switches to Inter (Sans) or JetBrains Mono (Mono)  
+**Label/Mono Font:** JetBrains Mono (monospace)  
+**Caption Font:** Inter (Sans)  
+**Micro Font:** JetBrains Mono (Mono)
 
 ### Hierarchy
 - **Display** (600 weight, `clamp(2rem, 5vw, 3.5rem)`, line-height 1.15): Central active phrase in huge mode.

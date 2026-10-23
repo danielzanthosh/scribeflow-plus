@@ -40,10 +40,10 @@ export const TermsModal: React.FC<TermsModalProps> = ({
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-2 mt-5 border-b border-theme-border/60 pb-px">
+          <div className="flex gap-2 mt-5 border-b border-theme-border/60 pb-px overflow-x-auto">
             <button
               onClick={() => setActiveTab('terms')}
-              className={`px-3 py-1.5 text-xs font-medium rounded-t-lg transition-colors border-b-2 ${
+              className={`px-3 py-1.5 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${
                 activeTab === 'terms'
                   ? 'border-theme-accent text-theme-accent bg-theme-accentBg/30'
                   : 'border-transparent text-theme-textMuted hover:text-theme-text'
@@ -53,7 +53,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('privacy')}
-              className={`px-3 py-1.5 text-xs font-medium rounded-t-lg transition-colors border-b-2 ${
+              className={`px-3 py-1.5 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${
                 activeTab === 'privacy'
                   ? 'border-theme-accent text-theme-accent bg-theme-accentBg/30'
                   : 'border-transparent text-theme-textMuted hover:text-theme-text'
@@ -63,7 +63,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('license')}
-              className={`px-3 py-1.5 text-xs font-medium rounded-t-lg transition-colors border-b-2 ${
+              className={`px-3 py-1.5 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${
                 activeTab === 'license'
                   ? 'border-theme-accent text-theme-accent bg-theme-accentBg/30'
                   : 'border-transparent text-theme-textMuted hover:text-theme-text'
@@ -73,7 +73,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('credits')}
-              className={`px-3 py-1.5 text-xs font-medium rounded-t-lg transition-colors border-b-2 ${
+              className={`px-3 py-1.5 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${
                 activeTab === 'credits'
                   ? 'border-theme-accent text-theme-accent bg-theme-accentBg/30'
                   : 'border-transparent text-theme-textMuted hover:text-theme-text'
