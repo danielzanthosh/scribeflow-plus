@@ -81,8 +81,8 @@ Six themes tested for contrast (≥4.5:1 ratio) and visual comfort:
 
 ```bash
 # Clone the repository
-git clone https://github.com/danielzanthosh/scribeflow.git
-cd scribeflow
+git clone https://github.com/danielzanthosh/scribeflow-plus.git
+cd scribeflow-plus
 
 # Install project dependencies
 npm install
