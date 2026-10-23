@@ -84,13 +84,16 @@ export const CameraGazeHUD: React.FC<CameraGazeHUDProps> = ({
           <button
             onClick={onToggleSound}
             title={soundEnabled ? 'Mute Audio Feedback' : 'Unmute Audio Feedback'}
-            className="p-1 rounded-md text-theme-textMuted hover:text-theme-text hover:bg-theme-surface transition-colors"
+            aria-label={soundEnabled ? 'Mute Audio Feedback' : 'Unmute Audio Feedback'}
+            className="p-1 min-h-[32px] min-w-[32px] rounded-md text-theme-textMuted hover:text-theme-text hover:bg-theme-surface transition-colors flex items-center justify-center"
           >
             {soundEnabled ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5 text-red-500" />}
           </button>
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="p-1 rounded-md text-theme-textMuted hover:text-theme-text hover:bg-theme-surface transition-colors"
+            title={isCollapsed ? 'Expand Gaze HUD' : 'Collapse Gaze HUD'}
+            aria-label={isCollapsed ? 'Expand Gaze HUD' : 'Collapse Gaze HUD'}
+            className="p-1 min-h-[32px] min-w-[32px] rounded-md text-theme-textMuted hover:text-theme-text hover:bg-theme-surface transition-colors flex items-center justify-center"
           >
             {isCollapsed ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>

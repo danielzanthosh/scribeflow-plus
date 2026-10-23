@@ -132,17 +132,20 @@ export const FlowStage: React.FC<FlowStageProps> = ({
         {/* Hero Active Phrase Card */}
         <div
           key={currentChunk.id}
+          role="region"
+          aria-live="polite"
+          aria-label={`Transcription Phrase ${currentIndex + 1} of ${totalChunks}`}
           className={`relative p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-theme-surface border border-theme-border shadow-lg transition-all duration-200 animate-chunk-pop text-center max-w-3xl mx-auto w-full min-h-[160px] sm:min-h-[220px] flex flex-col items-center justify-center`}
         >
-          {/* Chunk Type Badge */}
+          {/* Chunk Type Badge (Quiet & Subtle) */}
           {currentChunk.type !== 'text' && (
-            <span className="absolute top-3 left-4 px-2 py-0.5 rounded-full text-xs font-mono uppercase tracking-wider bg-theme-accentBg text-theme-accent border border-theme-border">
+            <span className="absolute top-3.5 left-4 px-2 py-0.5 rounded-full text-xs font-mono uppercase tracking-wider bg-theme-accentBg/60 text-theme-accent/90 border border-theme-border/60">
               {currentChunk.type}
             </span>
           )}
 
           {/* Word Count Indicator */}
-          <span className="absolute top-3 right-4 text-xs font-mono text-theme-textSubtle">
+          <span className="absolute top-3.5 right-4 text-xs font-mono text-theme-textSubtle">
             {currentChunk.wordCount} words
           </span>
 
@@ -156,7 +159,7 @@ export const FlowStage: React.FC<FlowStageProps> = ({
             />
           ) : (
             <div
-              className={`font-medium text-theme-text tracking-tight transition-colors ${fontClass} ${familyClass}`}
+              className={`font-medium text-theme-text tracking-tight transition-colors max-w-prose ${fontClass} ${familyClass}`}
               dangerouslySetInnerHTML={{ __html: parseInlineMarkdown(currentChunk.text) }}
             />
           )}
@@ -187,7 +190,8 @@ export const FlowStage: React.FC<FlowStageProps> = ({
             onClick={() => onNavigate(0)}
             disabled={currentIndex === 0}
             title="Reset to Start (Home)"
-            className="p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium flex items-center gap-1"
+            aria-label="Reset to First Phrase"
+            className="min-h-[44px] min-w-[44px] p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium flex items-center justify-center gap-1"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Reset</span>
@@ -197,7 +201,8 @@ export const FlowStage: React.FC<FlowStageProps> = ({
             onClick={() => onNavigate(Math.max(0, currentIndex - 5))}
             disabled={currentIndex === 0}
             title="Rewind 5 Chunks"
-            className="p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium"
+            aria-label="Rewind 5 Phrases"
+            className="min-h-[44px] min-w-[44px] p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium flex items-center justify-center"
           >
             -5
           </button>
@@ -208,7 +213,8 @@ export const FlowStage: React.FC<FlowStageProps> = ({
           <button
             onClick={() => onNavigate(Math.max(0, currentIndex - 1))}
             disabled={currentIndex === 0}
-            className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text font-medium text-xs sm:text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2 active:scale-95 shadow-sm"
+            aria-label="Previous Phrase"
+            className="min-h-[44px] px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl border border-theme-border bg-theme-surface hover:bg-theme-surfaceHover text-theme-text font-medium text-xs sm:text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2 active:scale-95 shadow-sm"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Previous</span>
@@ -217,7 +223,8 @@ export const FlowStage: React.FC<FlowStageProps> = ({
           <button
             onClick={() => onNavigate(Math.min(totalChunks - 1, currentIndex + 1))}
             disabled={currentIndex >= totalChunks - 1}
-            className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-2xl bg-theme-primary hover:bg-theme-primaryHover text-theme-primaryText font-semibold text-xs sm:text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2 shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
+            aria-label="Next Phrase"
+            className="min-h-[44px] px-6 sm:px-8 py-2.5 sm:py-3 rounded-2xl bg-theme-primary hover:bg-theme-primaryHover text-theme-primaryText font-semibold text-xs sm:text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2 shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
           >
             <span>Next</span>
             <ChevronRight className="w-4 h-4" />
@@ -230,7 +237,8 @@ export const FlowStage: React.FC<FlowStageProps> = ({
             onClick={() => onNavigate(Math.min(totalChunks - 1, currentIndex + 5))}
             disabled={currentIndex >= totalChunks - 1}
             title="Fast Forward 5 Chunks"
-            className="p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium"
+            aria-label="Fast Forward 5 Phrases"
+            className="min-h-[44px] min-w-[44px] p-2 sm:px-3 sm:py-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs font-medium flex items-center justify-center"
           >
             +5
           </button>

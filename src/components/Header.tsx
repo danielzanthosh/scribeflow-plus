@@ -87,7 +87,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onCycleTheme}
           title={`Current Theme: ${currentTheme}. Click to cycle themes.`}
-          className="p-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors flex items-center gap-1.5 text-xs font-medium"
+          aria-label={`Cycle theme. Current theme is ${currentTheme.replace('-', ' ')}`}
+          className="p-2 min-h-[38px] rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors flex items-center gap-1.5 text-xs font-medium"
         >
           <Palette className="w-4 h-4 text-theme-accent" />
           <span className="hidden lg:inline capitalize">{currentTheme.replace('-', ' ')}</span>
@@ -97,7 +98,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onOpenAbout}
           title="About & How to Use"
-          className="p-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors"
+          aria-label="About and How to Use"
+          className="p-2 min-h-[38px] min-w-[38px] rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors flex items-center justify-center"
         >
           <HelpCircle className="w-4 h-4" />
         </button>
@@ -106,7 +108,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onOpenSettings}
           title="Preferences & AI Configuration"
-          className="p-2 rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors"
+          aria-label="Preferences and Settings"
+          className="p-2 min-h-[38px] min-w-[38px] rounded-xl border border-theme-border hover:bg-theme-surfaceHover text-theme-text transition-colors flex items-center justify-center"
         >
           <Settings className="w-4 h-4" />
         </button>

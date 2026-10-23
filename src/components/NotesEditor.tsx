@@ -131,6 +131,7 @@ export const NotesEditor: React.FC<NotesEditorProps> = ({
             type="text"
             value={title}
             onChange={handleTitleChange}
+            aria-label="Document Title"
             placeholder="Document / Lecture Title"
             className="flex-1 bg-transparent text-lg font-serif font-bold text-theme-text border-b border-transparent hover:border-theme-border focus:border-theme-accent outline-none px-1 py-0.5 transition-colors"
           />
@@ -224,6 +225,7 @@ export const NotesEditor: React.FC<NotesEditorProps> = ({
         <textarea
           value={content}
           onChange={handleContentChange}
+          aria-label="Note content in Markdown and LaTeX"
           placeholder="Paste or type your notes here... Supports Markdown headers, bullet points, LaTeX formulas ($E=mc^2$ or $$block$$), and Markdown tables (| Col 1 | Col 2 |)."
           className="flex-1 w-full p-4 rounded-2xl bg-theme-bg border border-theme-border text-theme-text font-serif text-base leading-relaxed resize-none focus:outline-none focus:ring-1 focus:ring-theme-accent transition-all shadow-inner"
         />
